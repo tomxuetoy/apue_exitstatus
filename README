@@ -1,5 +1,6 @@
 Compile:
     $ gcc -DLINUX -ansi -I -Wall -D_GNU_SOURCE   -L./  exitstatus.c  libapue.a -pthread -o exitstatus
+    $ gcc -DLINUX -ansi -I -Wall -D_GNU_SOURCE   -L./  badexit2.c  libapue.a -pthread -o badexit2
 
 Run result:
     $ ./exitstatus
@@ -7,3 +8,20 @@ Run result:
     thread 1 returning
     thread 1 exit code 1
     thread 2 exit code 2
+
+    $ ./badexit2
+    thread 1:
+      structure at 0xb7577350
+      foo.a = 1
+      foo.b = 2
+      foo.c = 3
+      foo.d = 4
+    parent starting second thread
+    thread 2: ID is -1219003584
+    parent:
+      structure at 0xb7577350
+      foo.a = 0
+      foo.b = -1219003584
+      foo.c = -1219003584
+      foo.d = -1217265676
+        
