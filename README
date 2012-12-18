@@ -1,0 +1,9 @@
+Compile:
+    $ gcc -DLINUX -ansi -I -Wall -D_GNU_SOURCE   -L./  exitstatus.c  libapue.a -pthread -o exitstatus
+
+Run result:
+    $ ./exitstatus
+    thread 2 exiting
+    thread 1 returning
+    thread 1 exit code 1
+    thread 2 exit code 2
